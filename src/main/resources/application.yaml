@@ -1,0 +1,17 @@
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/blood-donation-management
+      username: root
+      password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: root
+      password: root
+server:
+  port: 8181
+      
