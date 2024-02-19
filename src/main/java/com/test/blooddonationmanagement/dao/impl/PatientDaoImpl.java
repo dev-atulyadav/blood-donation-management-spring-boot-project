@@ -1,6 +1,7 @@
 package com.test.blooddonationmanagement.dao.impl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,12 @@ public class PatientDaoImpl implements PatientDao {
 
 	@Override
 	public Patient getPatientByIdDao(int id) {
-		return repository.findById(id).get();
+		try {
+
+			return repository.findById(id).get();
+		} catch (NoSuchElementException e) {
+			return null;
+		}
 	}
 
 	@Override
